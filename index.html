@@ -9,9 +9,10 @@
     <style>
         body{
             background-image: url(星空滿滿ㄉ底圖.png);
-            background-position: center;
+            background-position: top;
             background-repeat: no-repeat;
             background-size: cover;
+            overflow: hidden;
         }
         #myCanvas{
             top: 0;
@@ -52,9 +53,9 @@
             color: red;
         }
         #form_link{
-            position: fixed;
+            position: absolute;
             opacity: 0;
-            top: 75vh;
+            top: 73vh;
         }
         #logo_image{
             height: 25vh;
@@ -83,6 +84,8 @@
 
     <script src="smoke.js"></script>
     <script>
+        document.body.scrollHeight = window.innerHeight;
+
         Velocity(document.getElementById('myCanvas'), {
             opacity: 0.4
         }, {
