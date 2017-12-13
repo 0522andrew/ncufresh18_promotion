@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>程設組需要你～～～～</title>
+    <link rel="shortcut icon" href="沒有中文字ㄉlogo.png" type="image/x-icon">
+    <title>程設組歡迎你～～～～</title>
     <style>
-        
-        section{
-            display: table;
-            min-height: 100vh;
-            min-width: 
-        }
-        .main{
-            display: table-cell;
-            vertical-align: middle;
+        body{
             background-image: url(星空滿滿ㄉ底圖.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        #myCanvas{
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+        section{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: table;
+            min-height: 100vh;
+        }
+        .main{
+            display: table-cell;
+            vertical-align: middle;
             min-height: 100vh;
             min-width: 100vw;
         }
@@ -27,21 +36,37 @@
         }
         h1, p{
             color: white;
+            text-align: center;
+            opacity: 0;
         }
         h1{
             font-size: 10vw;
-            text-align: center;
         }
         p{
-            font-size: 4vw;
-            text-align: center;
+            font-size: 4.2vw;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+            letter-spacing: 1.5vw;
         }
         a{
             color: red;
         }
+        #form_link{
+            position: fixed;
+            opacity: 0;
+            top: 75vh;
+        }
+        #logo_image{
+            height: 25vh;
+        }
     </style>
+    <script src="velocity.min.js"></script>
 </head>
 <body>
+    <canvas id="myCanvas"></canvas>
+
+    <a id='form_link' href="http://"><img id='logo_image' src="沒有中文字ㄉlogo.png" alt="點我去報名喔～～"></a>
+
     <section>
         <div class='main'>
             <div class="title">
@@ -50,9 +75,42 @@
             <div class="content">
                 <p>想要寫出這種美美的網頁嗎？</p>
                 <p>喜歡和大家一起合作寫程式嗎？</p>
-                <p>那就加入程設組吧！！</p>
+                <p>那就加入新知網程設組吧！！</p>
             </div>
         </div>
+        <div class="cerdit"></div>
     </section>
+
+    <script src="smoke.js"></script>
+    <script>
+        Velocity(document.getElementById('myCanvas'), {
+            opacity: 0.4
+        }, {
+            duration: 4000,
+            easing: [ 0.17, 0.67, 0.83, 0.67 ]
+        });
+
+        Velocity(document.getElementById('form_link'), {
+            opacity: 1
+        }, {
+            duration: 4000,
+            easing: [ 0.17, 0.67, 0.83, 0.67 ],
+            complete: function() { document.getElementById('form_link').style.opacity = 1; }
+        });
+
+        Velocity(document.getElementsByTagName('h1'), {
+            opacity: 1
+        }, {
+            duration: 4000,
+            easing: [ 0.17, 0.67, 0.83, 0.67 ]
+        });
+
+        Velocity(document.getElementsByTagName('p'), {
+            opacity: 1
+        }, {
+            duration: 4000,
+            easing: [ 0.17, 0.67, 0.83, 0.67 ]
+        });
+    </script>
 </body>
 </html>
