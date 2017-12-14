@@ -3,7 +3,7 @@
 var particles = [];
 
 // The amount of particles to render
-var particleCount = 500;
+var particleCount = 300;
 
 // The maximum velocity in each direction
 var maxVelocity = 2;
@@ -12,16 +12,29 @@ var maxVelocity = 2;
 var targetFPS = 33;
 
 // Set the dimensions of the canvas as variables so they can be used.
-document.getElementById('myCanvas').width = window.innerWidth;
+document.getElementById('myCanvas').width = document.body.clientWidth;
 document.getElementById('myCanvas').height = window.innerHeight;
-var canvasWidth = window.innerWidth;
+var canvasWidth = document.body.clientWidth;
 var canvasHeight = window.innerHeight;
+console.log("document.getElementById('myCanvas').width is "+document.getElementById('myCanvas').width);
+console.log("document.getElementById('myCanvas').height is "+document.getElementById('myCanvas').height);
+console.log("window.innerWidth is "+window.innerWidth);
+console.log("window.innerHeight is "+window.innerHeight);
+console.log("document.body.clientWidth is "+document.body.clientWidth);
+console.log("document.body.clientHeight is "+document.body.clientHeight);
 
 document.body.onresize = function(){
-    document.getElementById('myCanvas').width = window.innerWidth;
+    document.getElementById('myCanvas').width = document.body.clientWidth;
     document.getElementById('myCanvas').height = window.innerHeight;
-    canvasWidth = window.innerWidth;
+    canvasWidth = document.body.clientWidth;
     canvasHeight = window.innerHeight;
+    console.log("changed!!");
+    console.log("document.getElementById('myCanvas').width is "+document.getElementById('myCanvas').width);
+    console.log("document.getElementById('myCanvas').height is "+document.getElementById('myCanvas').height);
+    console.log("window.innerWidth is "+window.innerWidth);
+    console.log("window.innerHeight is "+window.innerHeight);
+    console.log("document.body.clientWidth is "+document.body.clientWidth);
+    console.log("document.body.clientHeight is "+document.body.clientHeight);
 };
 
 // Create an image object (only need one instance)
