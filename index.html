@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="沒有中文字ㄉlogo.png" type="image/x-icon">
-    <title>程設組歡迎你～～～～</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <title>程設組歡迎你🖥🖥～～～～</title>
     <style>
+        *{
+            font-family: 'Roboto Slab', Georgia, 'Times New Roman', Times, serif
+        }
         body{
             background-image: url(星空滿滿ㄉ底圖.png);
             background-position: center;
@@ -69,7 +73,7 @@
     <script src="velocity.min.js"></script>
 </head>
 <body>
-    <a id='form_link' href="https://goo.gl/forms/hbcAwLsmGT6hBN2c2"><img id='logo_image' src="沒有中文字ㄉlogo.png" alt="點我去報名喔～～"></a>
+    <a id='form_link' href="https://goo.gl/forms/hbcAwLsmGT6hBN2c2"><img id='logo_image' src="logo.png" alt="點我去報名喔～～"></a>
 
     <canvas id="myCanvas"></canvas>
 
@@ -89,7 +93,7 @@
 
     <script src="smoke.js"></script>
     <script>
-        //document.body.scrollHeight = window.innerHeight;
+        document.body.scrollHeight = window.innerHeight;
 
         Velocity(document.getElementById('myCanvas'), {
             opacity: 0.35
@@ -109,7 +113,7 @@
                     top: "+=-5vh",
                     left: "+=0.5vw"
                 }, {
-                    duration: 4000,
+                    duration: 2000,
                     easing: "swing",
                     loop: true
                 });
