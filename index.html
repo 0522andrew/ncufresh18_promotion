@@ -59,17 +59,17 @@
         }
         #form_link{
             position: fixed;
-            top: 73vh;
+            top: 100vh;
+            z-index: 5000;
         }
         #logo_image{
-            opacity: 0;
             height: 25vh;
         }
     </style>
     <script src="velocity.min.js"></script>
 </head>
 <body>
-    <a id='form_link' href="http://"><img id='logo_image' src="沒有中文字ㄉlogo.png" alt="點我去報名喔～～"></a>
+    <a id='form_link' href="https://goo.gl/forms/hbcAwLsmGT6hBN2c2"><img id='logo_image' src="沒有中文字ㄉlogo.png" alt="點我去報名喔～～"></a>
 
     <canvas id="myCanvas"></canvas>
 
@@ -94,16 +94,26 @@
         Velocity(document.getElementById('myCanvas'), {
             opacity: 0.35
         }, {
-            duration: 4000,
+            duration: 4000,                      
             easing: [ 0.17, 0.67, 0.83, 0.67 ]
         });
 
-        Velocity(document.getElementById('logo_image'), {
-            opacity: 1
+        Velocity(document.getElementById('form_link'), {
+            top: "73vh"
         }, {
             duration: 4000,
-            easing: [ 0.17, 0.67, 0.83, 0.67 ],
-            complete: function() { document.getElementById('logo_image').style.opacity = 1; }
+            easing: "swing",
+            complete: function() {
+                Velocity(document.getElementById('form_link'), {
+                    scale: 0.8,
+                    top: "-=5vh",
+                    left: "+=0.5vw"
+                }, {
+                    duration: 4000,
+                    easing: "swing",
+                    loop: true
+                });
+            }
         });
 
         Velocity(document.getElementsByTagName('h1'), {
