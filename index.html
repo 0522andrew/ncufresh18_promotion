@@ -9,10 +9,13 @@
     <style>
         body{
             background-image: url(星空滿滿ㄉ底圖.png);
-            background-position: top;
+            background-position: center;
             background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
             background-size: cover;
-            overflow: hidden;
+            /* overflow: hidden; */
         }
         #myCanvas{
             top: 0;
@@ -53,20 +56,20 @@
             color: red;
         }
         #form_link{
-            position: absolute;
-            opacity: 0;
+            position: fixed;
             top: 73vh;
         }
         #logo_image{
+            opacity: 0;
             height: 25vh;
         }
     </style>
     <script src="velocity.min.js"></script>
 </head>
 <body>
-    <canvas id="myCanvas"></canvas>
-
     <a id='form_link' href="http://"><img id='logo_image' src="沒有中文字ㄉlogo.png" alt="點我去報名喔～～"></a>
+
+    <canvas id="myCanvas"></canvas>
 
     <section>
         <div class='main'>
@@ -93,12 +96,12 @@
             easing: [ 0.17, 0.67, 0.83, 0.67 ]
         });
 
-        Velocity(document.getElementById('form_link'), {
+        Velocity(document.getElementById('logo_image'), {
             opacity: 1
         }, {
             duration: 4000,
             easing: [ 0.17, 0.67, 0.83, 0.67 ],
-            complete: function() { document.getElementById('form_link').style.opacity = 1; }
+            complete: function() { document.getElementById('logo_image').style.opacity = 1; }
         });
 
         Velocity(document.getElementsByTagName('h1'), {
