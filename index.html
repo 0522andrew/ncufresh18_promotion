@@ -59,7 +59,7 @@
             margin-bottom: 2vw;
             letter-spacing: 1.5vw;
         }
-        a{
+        #you{
             color: red;
         }
         #form_link{
@@ -81,7 +81,7 @@
     <section>
         <div class='main'>
             <div class="title">
-                <h1>We want <a>you</a>!!</h1>
+                <h1>We want <b id='you'>you</b>!!</h1>
             </div>
             <div class="content">
                 <p>想要寫出這種美美的網頁嗎？</p>
@@ -132,7 +132,16 @@
             opacity: 1
         }, {
             duration: 4000,
-            easing: [ 0.17, 0.67, 0.83, 0.67 ]
+            easing: [ 0.17, 0.67, 0.83, 0.67 ],
+            complete: function(){
+                Velocity(document.getElementById('you'), {
+                    color: "#FFFFFF"
+                }, {
+                    duration: 1500,
+                    easing: "swing",
+                    loop: true
+                });
+            }
         });
     </script>
 </body>
